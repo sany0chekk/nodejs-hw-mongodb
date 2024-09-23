@@ -15,11 +15,11 @@ export const createContactSchema = Joi.object({
         'Phone number can only contain numbers and the "+" symbol',
       'any.required': 'Phone is required',
     }),
-  email: Joi.string().min(3).max(20).email().message({
+  email: Joi.string().min(3).max(20).email().messages({
     'string.base': 'Email should be a string',
     'string.email': 'Please provide a valid email address',
   }),
-  isFavourite: Joi.boolean().message({
+  isFavourite: Joi.boolean().messages({
     'boolean.base': 'isFavourite should be a string',
   }),
   contactType: Joi.string()
