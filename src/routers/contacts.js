@@ -32,7 +32,6 @@ router.get(
 
 router.post(
   '/',
-  isValidId,
   upload.single('photo'),
   validateBody(createContactSchema),
   ctrlWrapper(createContactController),
