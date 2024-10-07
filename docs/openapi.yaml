@@ -13,7 +13,7 @@ tags:
     description: Operations about description
 servers:
   - url: http://localhost:3000
-  # - url: #посилання на задеплоєний сайт
+  # - url: https://nodejs-hw-mongodb-34gn.onrender.com
 paths:
   /contacts:
     get:
