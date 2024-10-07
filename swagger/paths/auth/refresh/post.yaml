@@ -1,0 +1,45 @@
+tags:
+  - Auth
+summary: Refresh session tokens
+operationId: refreshToken
+description: |
+  This endpoint allows users to refresh their session tokens using their refresh token stored in cookies.
+  It provides a new access token and resets the session expiration time.
+security:
+  - bearerAuth: []
+responses:
+  '200':
+    description: Successfully refreshed the session and issued a new access token
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: integer
+              example: 200
+            message:
+              type: string
+              example: 'Successfully refreshed a session!'
+            data:
+              type: object
+              properties:
+                accessToken:
+                  description: The newly generated access token
+                  type: string
+                  example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'
+  '401':
+    description: Refresh token is invalid or expired
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: integer
+              example: 401
+            message:
+              type: string
+              example: 'Invalid or expired refresh token'
+  # '500':
+  #   $ref: ../../components/responses/500.yaml

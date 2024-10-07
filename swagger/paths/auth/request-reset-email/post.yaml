@@ -1,0 +1,53 @@
+tags:
+  - Auth
+summary: Request a password reset email
+operationId: requestResetEmail
+description: |
+  This endpoint allows users to request a password reset email.
+  An email containing the reset link will be sent to the provided email address if it exists in the system.
+security: []
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          email:
+            type: string
+            format: email
+            example: 'user@example.com'
+        required:
+          - email
+responses:
+  '200':
+    description: Reset password email successfully sent
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: integer
+              example: 200
+            message:
+              type: string
+              example: 'Reset password email was successfully sent'
+            data:
+              type: object
+              example: {}
+  '404':
+    description: Email address not found in the system
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: integer
+              example: 404
+            message:
+              type: string
+              example: 'User not found'
+  # '500':
+  #   $ref: ../../components/responses/500.yaml
