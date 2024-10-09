@@ -11,11 +11,9 @@ requestBody:
       schema:
         type: object
         required:
-          - _id
           - name
           - phoneNumber
           - contactType
-          - userId
         properties:
           name:
             description: "Contact's name"
@@ -27,7 +25,7 @@ requestBody:
             example: 'john.doe@gmail.com'
           phoneNumber:
             description: "Contact's phone number"
-            type: number
+            type: string
             example: +380676025125
           contactType:
             description: "Contact's type"
@@ -38,9 +36,9 @@ requestBody:
             type: boolean
             example: true
           photo:
-            description: "Link to contact's photo"
+            description: "Contact's photo"
             type: string
-            example: https://res.cloudinary.com/uqwgdu/image/upload/image.png
+            format: binary
 
 responses:
   '201':

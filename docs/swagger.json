@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "https://nodejs-hw-mongodb-34gn.onrender.com"
+      "url": "http://localhost:3000"
     }
   ],
   "tags": [
@@ -177,11 +177,9 @@
               "schema": {
                 "type": "object",
                 "required": [
-                  "_id",
                   "name",
                   "phoneNumber",
-                  "contactType",
-                  "userId"
+                  "contactType"
                 ],
                 "properties": {
                   "name": {
@@ -196,7 +194,7 @@
                   },
                   "phoneNumber": {
                     "description": "Contact's phone number",
-                    "type": "number",
+                    "type": "string",
                     "example": 380676025125
                   },
                   "contactType": {
@@ -214,9 +212,9 @@
                     "example": true
                   },
                   "photo": {
-                    "description": "Link to contact's photo",
+                    "description": "Contact's photo",
                     "type": "string",
-                    "example": "https://res.cloudinary.com/uqwgdu/image/upload/image.png"
+                    "format": "binary"
                   }
                 }
               }
@@ -379,7 +377,7 @@
                   "photo": {
                     "type": "string",
                     "description": "Link to contact's photo (optional)",
-                    "format": "uri",
+                    "format": "binary",
                     "example": "https://example.com/photo.jpg"
                   }
                 }

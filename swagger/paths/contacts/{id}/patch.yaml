@@ -41,7 +41,7 @@ requestBody:
           photo:
             type: string
             description: "Link to contact's photo (optional)"
-            format: uri
+            format: binary
             example: 'https://example.com/photo.jpg'
 responses:
   '200':
