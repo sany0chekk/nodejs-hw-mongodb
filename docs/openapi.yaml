@@ -12,8 +12,8 @@ tags:
   - name: Auth
     description: Operations about description
 servers:
-  - url: http://localhost:3000
-  # - url: https://nodejs-hw-mongodb-34gn.onrender.com
+  # - url: http://localhost:3000
+  - url: https://nodejs-hw-mongodb-34gn.onrender.com
 paths:
   /contacts:
     get:
