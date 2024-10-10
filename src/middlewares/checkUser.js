@@ -22,7 +22,7 @@ export const checkUser = async (req, res, next) => {
 
   if (!checkContact) {
     next(
-      createHttpError(403, 'You do not have permission to access this contact'),
+      createHttpError(404, 'You do not have permission to access this contact'),
     );
     return;
   }

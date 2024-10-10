@@ -32,7 +32,10 @@ requestBody:
             example: '+380676025125'
           contactType:
             type: string
-            enum: ['work', 'home', 'personal']
+            enum:
+              - 'work'
+              - 'home'
+              - 'personal'
             description: "Contact's type"
           isFavourite:
             type: boolean

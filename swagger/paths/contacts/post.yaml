@@ -30,7 +30,10 @@ requestBody:
           contactType:
             description: "Contact's type"
             type: string
-            enum: ['work', 'home', 'personal']
+            enum:
+              - 'work'
+              - 'home'
+              - 'personal'
           isFavourite:
             description: "Contact's status"
             type: boolean
